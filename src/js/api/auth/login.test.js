@@ -40,6 +40,7 @@ describe("login function", () => {
     expect(mockLocalStorage.setItem).toHaveBeenCalledWith("token", '\"mockToken\"');
     expect(mockLocalStorage.setItem).toHaveBeenCalledWith("profile", '{\"name\":\"test\",\"email\":\"jesttest@stud.noroff.no\"}');
   });
+  
   it("Api call fails and does not store values in local storage", async () => {
     global.fetch = mockFetchApiFail;
     await expect(login(email, password)).rejects.toThrow("Unauthorized");
