@@ -1,7 +1,7 @@
 import { login } from "./login";
 
-const email = "jesttest@stud.noroff.no";
-const password = "testing";
+const email = "jest.test@stud.noroff.no";
+const password = "testing123";
 const accessToken = "mockToken";
 
 const mockFetchApi = jest.fn().mockResolvedValue({
