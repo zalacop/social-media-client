@@ -33,8 +33,8 @@ describe("Form validation test", () => {
     });
 
     it("User cannot log in without filling out the form", () => {
-        cy.get('#loginEmail:invalid').should('exist'); 
-        cy.get('#loginPassword:invalid').should('exist'); 
+        cy.get("#loginEmail:invalid").should("exist"); 
+        cy.get("#loginPassword:invalid").should("exist"); 
         cy.get("#loginForm button[type=submit]").contains("Login").click();
         cy.wait(2000);
     });

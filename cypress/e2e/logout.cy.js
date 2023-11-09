@@ -3,7 +3,7 @@ const password = "twixtwix";
 
 describe('Logout test', () => {
     it("User can log out", () => {
-      cy.visit('/index.html');
+      cy.visit("/index.html");
       cy.wait(1000);
       cy.get("#registerModal").contains("Login").click();
       cy.get("#loginForm").should("be.visible");
@@ -15,6 +15,6 @@ describe('Logout test', () => {
       cy.get("header button[type=button]").contains("Logout").click();
       cy.wait(1000);
       cy.clearLocalStorage();
-      cy.window().its('localStorage').should('be.empty');
+      cy.window().its("localStorage").should("be.empty");
     });
   })

@@ -38,7 +38,7 @@ describe("login function", () => {
     await login(email, password);
     expect(fetch).toBe(mockFetchApi);
     expect(mockLocalStorage.setItem).toHaveBeenCalledWith("token", '\"mockToken\"');
-    expect(mockLocalStorage.setItem).toHaveBeenCalledWith("profile", '{\"name\":\"test\",\"email\":\"jesttest@stud.noroff.no\"}');
+    expect(mockLocalStorage.setItem).toHaveBeenCalledWith("profile", '{\"name\":\"test\",\"email\":\"jest.test@stud.noroff.no\"}');
   });
   
   it("Api call fails and does not store values in local storage", async () => {
