@@ -2,11 +2,8 @@ const email = "twix@noroff.no";
 const password = "twixtwix";
 
 describe('Login test', () => {
-  beforeEach(() => {
-    cy.visit("/index.html");
-  });
-
   it('User can log in', () => {
+    cy.visit("/index.html");
     cy.wait(1000);
     cy.get("#registerModal").contains("Login").click();
     cy.get("#loginForm").should("be.visible");
