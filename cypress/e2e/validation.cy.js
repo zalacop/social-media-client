@@ -16,13 +16,20 @@ describe("Form validation test", () => {
         cy.get("#loginPassword").type(password);
         cy.get("#loginForm button[type=submit]").contains("Login").click();
         cy.wait(2000);
-    });
+        cy.on("window:alert", (alertMessage) => {
+            expect(alertMessage).to.equal("Either your username was not found or your password is incorrect");
+        });
+      });
+      
         
     it("User cannot log in with wrong password", () => {
         cy.get("#loginEmail").type(email);
         cy.get("#loginPassword").type(wrongPassword);
         cy.get("#loginForm button[type=submit]").contains("Login").click();
         cy.wait(2000);
+        cy.on("window:alert", (alertMessage) => {
+            expect(alertMessage).to.equal("Either your username was not found or your password is incorrect");
+        });
     });
 
     it("User cannot login with wrong email and password", () => {
@@ -30,6 +37,9 @@ describe("Form validation test", () => {
         cy.get("#loginPassword").type(wrongPassword);
         cy.get("#loginForm button[type=submit]").contains("Login").click();
         cy.wait(2000);
+        cy.on("window:alert", (alertMessage) => {
+            expect(alertMessage).to.equal("Either your username was not found or your password is incorrect");
+        });
     });
 
     it("User cannot log in without filling out the form", () => {
